@@ -8,7 +8,7 @@
 
 ## Sobre (pt)
 
-> Software Engineer autodidata, hoje Tech Lead na Prolog App, em Florianópolis, SC.
+> Senior Software Engineer autodidata, hoje Tech Lead na Prolog App, em Florianópolis, SC.
 >
 > Trabalho principalmente com Java, Spring Boot e PostgreSQL, e faço DevOps e infraestrutura
 > em AWS e GCP.
@@ -17,7 +17,7 @@
 
 ## Sobre (en)
 
-> Self-taught Software Engineer, currently Tech Lead at Prolog App, in Florianópolis, Brazil.
+> Self-taught Senior Software Engineer, currently Tech Lead at Prolog App, in Florianópolis, Brazil.
 >
 > I work mostly with Java, Spring Boot and PostgreSQL, and I do DevOps and infrastructure
 > work in AWS and GCP.

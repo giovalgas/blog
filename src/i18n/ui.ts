@@ -95,7 +95,7 @@ export const ui: Record<Lang, Ui> = {
     hreflang: "en",
     title: "Giovani Valgas",
     description:
-      "Self-taught Software Engineer, currently Tech Lead at Prolog App, in Florianópolis, Brazil.",
+      "Self-taught Senior Software Engineer, currently Tech Lead at Prolog App, in Florianópolis, Brazil.",
     home: "/",
     blog: "/blog",
     rss: "/rss.xml",
@@ -125,7 +125,7 @@ export const ui: Record<Lang, Ui> = {
       command: "cat ABOUT.md",
       p1: [
         { text: "Self-taught " },
-        { text: "Software Engineer", accent: true },
+        { text: "Senior Software Engineer", accent: true },
         { text: ", currently " },
         { text: "Tech Lead", accent: true },
         { text: " at Prolog App, in Florianópolis, Brazil." },
@@ -195,7 +195,7 @@ export const ui: Record<Lang, Ui> = {
     hreflang: "pt-BR",
     title: "Giovani Valgas",
     description:
-      "Software Engineer autodidata, hoje Tech Lead na Prolog App, em Florianópolis, SC.",
+      "Senior Software Engineer autodidata, hoje Tech Lead na Prolog App, em Florianópolis, SC.",
     home: "/pt/",
     blog: "/pt/blog",
     rss: "/pt/rss.xml",
@@ -224,7 +224,7 @@ export const ui: Record<Lang, Ui> = {
     about: {
       command: "cat SOBRE.md",
       p1: [
-        { text: "Software Engineer", accent: true },
+        { text: "Senior Software Engineer", accent: true },
         { text: " autodidata, hoje " },
         { text: "Tech Lead", accent: true },
         { text: " na Prolog App, em Florianópolis, SC." },
