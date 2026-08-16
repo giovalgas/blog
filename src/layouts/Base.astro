@@ -19,6 +19,12 @@ const enHref = Astro.props.enHref ?? ui.en.home;
 const ptHref = Astro.props.ptHref ?? ui.pt.home;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 
+const gaId = "G-BP3Y0KL0XN";
+const gaInit = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${gaId}');`;
+
 const detectLang = `(function () {
   var target = document.currentScript.dataset.ptHref;
   var stored = null;
@@ -63,6 +69,14 @@ const detectLang = `(function () {
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={lang === "en" ? "en" : "pt_BR"} />
     {lang === "en" && <script is:inline data-pt-href={ptHref} set:html={detectLang} />}
+    {
+      import.meta.env.PROD && (
+        <>
+          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+          <script is:inline set:html={gaInit} />
+        </>
+      )
+    }
   </head>
   <body>
     <LangToggle
