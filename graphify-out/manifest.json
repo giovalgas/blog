@@ -1,0 +1,227 @@
+{
+  ".claude/settings.json": {
+    "mtime": 1786924066.9727519,
+    "ast_hash": "f5f3e8d944a2377227da6a1f2c30b207",
+    "semantic_hash": "f5f3e8d944a2377227da6a1f2c30b207"
+  },
+  "astro.config.mjs": {
+    "mtime": 1786847418.943097,
+    "ast_hash": "43ca4afddb77724d007577385699b009",
+    "semantic_hash": "43ca4afddb77724d007577385699b009"
+  },
+  "biome.json": {
+    "mtime": 1786846657.1441648,
+    "ast_hash": "3e76cd237f7a5c5d0c965d210dacc048",
+    "semantic_hash": "3e76cd237f7a5c5d0c965d210dacc048"
+  },
+  "package.json": {
+    "mtime": 1786847550.187318,
+    "ast_hash": "f37750b8f404ed0f747c425e130c0d58",
+    "semantic_hash": "f37750b8f404ed0f747c425e130c0d58"
+  },
+  "src/components/BlogIndex.astro": {
+    "mtime": 1786912134.2682228,
+    "ast_hash": "4520caa936c2fc2db2a3f3b28d04edc4",
+    "semantic_hash": "4520caa936c2fc2db2a3f3b28d04edc4"
+  },
+  "src/components/CommandLink.astro": {
+    "mtime": 1786912134.2683523,
+    "ast_hash": "b662db48f1d5857ab8e4478aa926b034",
+    "semantic_hash": "b662db48f1d5857ab8e4478aa926b034"
+  },
+  "src/components/Footer.astro": {
+    "mtime": 1786912134.2684648,
+    "ast_hash": "df90600afd17c0e3b90329647d284ae7",
+    "semantic_hash": "df90600afd17c0e3b90329647d284ae7"
+  },
+  "src/components/Home.astro": {
+    "mtime": 1786912134.2685738,
+    "ast_hash": "e4c407fe9a4abb68dc06a294ee1ce32b",
+    "semantic_hash": "e4c407fe9a4abb68dc06a294ee1ce32b"
+  },
+  "src/components/Post.astro": {
+    "mtime": 1786912134.2688656,
+    "ast_hash": "0d75d7f4a21397a088cdd711ba323c2d",
+    "semantic_hash": "0d75d7f4a21397a088cdd711ba323c2d"
+  },
+  "src/components/Prompt.astro": {
+    "mtime": 1786912134.2689936,
+    "ast_hash": "55c373fc1cddcf9d31a1b9578db0dd6f",
+    "semantic_hash": "55c373fc1cddcf9d31a1b9578db0dd6f"
+  },
+  "src/components/StatusBar.astro": {
+    "mtime": 1786912134.2691033,
+    "ast_hash": "84fdcd52b72ab543fb2052701eed8a4e",
+    "semantic_hash": "84fdcd52b72ab543fb2052701eed8a4e"
+  },
+  "src/components/islands/CvPane.tsx": {
+    "mtime": 1786912134.2693508,
+    "ast_hash": "45ed986a436f4528b0a76ddfa61a39ec",
+    "semantic_hash": "45ed986a436f4528b0a76ddfa61a39ec"
+  },
+  "src/components/islands/LangToggle.tsx": {
+    "mtime": 1786912134.2694576,
+    "ast_hash": "df94235c5a2390033b6f8346f9e16cfd",
+    "semantic_hash": "df94235c5a2390033b6f8346f9e16cfd"
+  },
+  "src/components/islands/ScrollCue.tsx": {
+    "mtime": 1786912134.269569,
+    "ast_hash": "983811d37c26afd6a2e4f4b43c9e9bf3",
+    "semantic_hash": "983811d37c26afd6a2e4f4b43c9e9bf3"
+  },
+  "src/components/islands/Typewriter.tsx": {
+    "mtime": 1786912134.269687,
+    "ast_hash": "29d29575d63beed2db9f920225bf81dd",
+    "semantic_hash": "29d29575d63beed2db9f920225bf81dd"
+  },
+  "src/content.config.ts": {
+    "mtime": 1786847693.7646973,
+    "ast_hash": "b95b2ecdc7b71357ab15f384cd694d46",
+    "semantic_hash": "b95b2ecdc7b71357ab15f384cd694d46"
+  },
+  "src/i18n/ui.ts": {
+    "mtime": 1786912134.2699254,
+    "ast_hash": "1a404f5d78752b492860a19d6987235e",
+    "semantic_hash": "1a404f5d78752b492860a19d6987235e"
+  },
+  "src/layouts/Base.astro": {
+    "mtime": 1786912134.2700584,
+    "ast_hash": "74db83ed61ab2c31178f60aa3acaa915",
+    "semantic_hash": "74db83ed61ab2c31178f60aa3acaa915"
+  },
+  "src/pages/blog/[slug].astro": {
+    "mtime": 1786847534.32493,
+    "ast_hash": "60c73d492fd789a52bce76f48f8046a4",
+    "semantic_hash": "60c73d492fd789a52bce76f48f8046a4"
+  },
+  "src/pages/blog/index.astro": {
+    "mtime": 1786847529.0579543,
+    "ast_hash": "2e9b357ddfa3723d64823ff2f3d77bb5",
+    "semantic_hash": "2e9b357ddfa3723d64823ff2f3d77bb5"
+  },
+  "src/pages/index.astro": {
+    "mtime": 1786847527.0022619,
+    "ast_hash": "39815c8b81c7e3ace2ef3e7a8da1be19",
+    "semantic_hash": "39815c8b81c7e3ace2ef3e7a8da1be19"
+  },
+  "src/pages/pt/blog/[slug].astro": {
+    "mtime": 1786847536.4603505,
+    "ast_hash": "a59050ebc9e4a61ff945a2c3a4182cac",
+    "semantic_hash": "a59050ebc9e4a61ff945a2c3a4182cac"
+  },
+  "src/pages/pt/blog/index.astro": {
+    "mtime": 1786847529.712088,
+    "ast_hash": "aee8ad9f255e86b87dede8c9de8a0baf",
+    "semantic_hash": "aee8ad9f255e86b87dede8c9de8a0baf"
+  },
+  "src/pages/pt/index.astro": {
+    "mtime": 1786847527.6648347,
+    "ast_hash": "68eed7ff7120575590922bc0501e651b",
+    "semantic_hash": "68eed7ff7120575590922bc0501e651b"
+  },
+  "src/pages/pt/rss.xml.ts": {
+    "mtime": 1786847693.7647254,
+    "ast_hash": "a8fa957d92f8885ce3fa3b5e4ae77705",
+    "semantic_hash": "a8fa957d92f8885ce3fa3b5e4ae77705"
+  },
+  "src/pages/rss.xml.ts": {
+    "mtime": 1786847693.7648451,
+    "ast_hash": "42d1b5b7fc760dcfef43e10d779b0197",
+    "semantic_hash": "42d1b5b7fc760dcfef43e10d779b0197"
+  },
+  "tsconfig.json": {
+    "mtime": 1786845707.274976,
+    "ast_hash": "5599982b80af794553c4639d10f38f86",
+    "semantic_hash": "5599982b80af794553c4639d10f38f86"
+  },
+  "CLAUDE.md": {
+    "mtime": 1786924066.972455,
+    "ast_hash": "3c3e397e47bae49882bdc0fff20d5b7f",
+    "semantic_hash": "3c3e397e47bae49882bdc0fff20d5b7f"
+  },
+  "README.md": {
+    "mtime": 1786849641.5022116,
+    "ast_hash": "70f330e2184ae9921b710e3c3ba700bb",
+    "semantic_hash": "70f330e2184ae9921b710e3c3ba700bb"
+  },
+  "specs/00-PROMPT.md": {
+    "mtime": 1786846211.2282124,
+    "ast_hash": "47ce1d9bd5d1144997e748892a1966f6",
+    "semantic_hash": "47ce1d9bd5d1144997e748892a1966f6"
+  },
+  "specs/01-STACK.md": {
+    "mtime": 1786847680.357895,
+    "ast_hash": "fda8df1dead591fa08161f01d617644a",
+    "semantic_hash": "fda8df1dead591fa08161f01d617644a"
+  },
+  "specs/02-DESIGN-SYSTEM.md": {
+    "mtime": 1786846248.0976262,
+    "ast_hash": "0263e37d1ae0613cdc2f75d500973e22",
+    "semantic_hash": "0263e37d1ae0613cdc2f75d500973e22"
+  },
+  "specs/03-CHROME.md": {
+    "mtime": 1786846278.2201056,
+    "ast_hash": "1495a71332d13b001b9ebaa18a4e8bdb",
+    "semantic_hash": "1495a71332d13b001b9ebaa18a4e8bdb"
+  },
+  "specs/04-HOME.md": {
+    "mtime": 1786846318.4809322,
+    "ast_hash": "01a914d66c5b73426a8b8934c0da63bf",
+    "semantic_hash": "01a914d66c5b73426a8b8934c0da63bf"
+  },
+  "specs/05-BLOG.md": {
+    "mtime": 1786846362.571673,
+    "ast_hash": "a2fa42d8b535c8395b151669a762d442",
+    "semantic_hash": "a2fa42d8b535c8395b151669a762d442"
+  },
+  "specs/06-POST.md": {
+    "mtime": 1786846349.294515,
+    "ast_hash": "4ee5eec40d60a099281d7b7534cb76d9",
+    "semantic_hash": "4ee5eec40d60a099281d7b7534cb76d9"
+  },
+  "specs/07-CV-PANE.md": {
+    "mtime": 1786846333.9752872,
+    "ast_hash": "9e1c1a17a650e179241d1641fe545272",
+    "semantic_hash": "9e1c1a17a650e179241d1641fe545272"
+  },
+  "specs/08-I18N.md": {
+    "mtime": 1786847651.9941497,
+    "ast_hash": "878875580b9f856a741c30078aa90fce",
+    "semantic_hash": "878875580b9f856a741c30078aa90fce"
+  },
+  "specs/09-CONTEUDO.md": {
+    "mtime": 1786852560.2071874,
+    "ast_hash": "e35c418191f493e8f911f67c54ef570e",
+    "semantic_hash": "e35c418191f493e8f911f67c54ef570e"
+  },
+  "specs/Home.dc.html": {
+    "mtime": 1786845999.0382915,
+    "ast_hash": "049e4923f9c0da8ec8a8a846d62f9250",
+    "semantic_hash": "049e4923f9c0da8ec8a8a846d62f9250"
+  },
+  "specs/Post.dc.html": {
+    "mtime": 1786846001.145749,
+    "ast_hash": "83fae27f871179193991288ec92e9946",
+    "semantic_hash": "83fae27f871179193991288ec92e9946"
+  },
+  "public/documents/giovani-valgas-cv-en.pdf": {
+    "mtime": 1786372894.5342853,
+    "ast_hash": "4c86e93ea9bd3b75b28ba5b17e929e59",
+    "semantic_hash": "4c86e93ea9bd3b75b28ba5b17e929e59"
+  },
+  "public/documents/giovani-valgas-cv-ptbr.pdf": {
+    "mtime": 1786849381.8008194,
+    "ast_hash": "32bda70f09effbff2f78e16442946d10",
+    "semantic_hash": "32bda70f09effbff2f78e16442946d10"
+  },
+  "public/apple-touch-icon.png": {
+    "mtime": 1786849991.5216155,
+    "ast_hash": "a709904d4a7d34d92694c102597a8459",
+    "semantic_hash": "a709904d4a7d34d92694c102597a8459"
+  },
+  "public/favicon-32.png": {
+    "mtime": 1786849991.4946804,
+    "ast_hash": "015d4f0c25d15d1b8d3e9b69836d074e",
+    "semantic_hash": "015d4f0c25d15d1b8d3e9b69836d074e"
+  }
+}
