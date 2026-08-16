@@ -29,7 +29,7 @@ const label = posts.length === 1 ? t.blogIndex.one : t.blogIndex.many;
   enHref={ui.en.blog}
   ptHref={ui.pt.blog}
 >
-  <main class="shell pt-[88px] pb-[120px]">
+  <main class="shell pt-[88px]">
     <CommandLink command={t.blogIndex.backCommand} href={t.home} />
 
     <div class="mt-14 flex items-baseline justify-between gap-6">
@@ -75,7 +75,7 @@ const label = posts.length === 1 ? t.blogIndex.one : t.blogIndex.many;
         ))
       )
     }
-
-    <Footer links={t.footerBlog} class="mt-[72px] border-t-[0.5px] border-surface0 pt-7" />
   </main>
+
+  <Footer links={t.footer} class="shell pt-[200px] pb-[104px]" />
 </Base>

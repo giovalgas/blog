@@ -8,7 +8,7 @@ interface Props {
   windows: TmuxWindow[];
 }
 
-const ACTION = "transition-colors duration-[140ms] ease-[ease] hover:text-peach";
+const ACTION = "cursor-pointer transition-colors duration-[140ms] ease-[ease] hover:text-peach";
 
 export default function CvPane({ files, labels, windows }: Props) {
   const [openFile, setOpenFile] = useState<string | null>(null);

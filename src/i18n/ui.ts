@@ -78,8 +78,7 @@ export interface Ui {
     prev: string;
     next: string;
   };
-  footerHome: NavLink[];
-  footerBlog: NavLink[];
+  footer: NavLink[];
 }
 
 const social = {
@@ -182,19 +181,13 @@ export const ui: Record<Lang, Ui> = {
       prev: "previous",
       next: "next",
     },
-    footerHome: [
+    footer: [
       { label: "github", href: social.github, external: true },
       { label: "linkedin", href: social.linkedin, external: true },
       { label: "instagram", href: social.instagram, external: true },
       { label: "youtube", href: social.youtube, external: true },
       { label: "email", href: social.email },
       { label: "blog", href: "/blog" },
-    ],
-    footerBlog: [
-      { label: "github", href: social.github, external: true },
-      { label: "linkedin", href: social.linkedin, external: true },
-      { label: "email", href: social.email },
-      { label: "rss", href: "/rss.xml" },
     ],
   },
   pt: {
@@ -287,19 +280,13 @@ export const ui: Record<Lang, Ui> = {
       prev: "anterior",
       next: "próximo",
     },
-    footerHome: [
+    footer: [
       { label: "github", href: social.github, external: true },
       { label: "linkedin", href: social.linkedin, external: true },
       { label: "instagram", href: social.instagram, external: true },
       { label: "youtube", href: social.youtube, external: true },
       { label: "email", href: social.email },
       { label: "blog", href: "/pt/blog" },
-    ],
-    footerBlog: [
-      { label: "github", href: social.github, external: true },
-      { label: "linkedin", href: social.linkedin, external: true },
-      { label: "email", href: social.email },
-      { label: "rss", href: "/pt/rss.xml" },
     ],
   },
 };

@@ -44,7 +44,7 @@ const card =
   enHref={enSibling ? postPath("en", enSibling.data.slug) : ui.en.blog}
   ptHref={ptSibling ? postPath("pt", ptSibling.data.slug) : ui.pt.blog}
 >
-  <main class="shell pt-[88px] pb-[120px]">
+  <main class="shell pt-[88px]">
     <CommandLink command={t.post.backCommand} href={t.blog} />
 
     <article class="mt-14 max-w-[68ch] animate-fade-up">
@@ -90,9 +90,7 @@ const card =
       )
     }
 
-    <Footer
-      links={t.footerBlog}
-      class="mt-[72px] max-w-[68ch] border-t-[0.5px] border-surface0 pt-7"
-    />
   </main>
+
+  <Footer links={t.footer} class="shell pt-[200px] pb-[104px]" />
 </Base>
