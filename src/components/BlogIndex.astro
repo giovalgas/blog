@@ -46,7 +46,7 @@ const label = posts.length === 1 ? t.blogIndex.one : t.blogIndex.many;
       ) : (
         years.map((year) => (
           <section class="mt-10">
-            <h2 class="sticky top-0 z-10 border-b-[0.5px] border-surface0 bg-crust pb-2 text-[13px] font-normal text-overlay0 desk:static">
+            <h2 class="sticky top-0 z-10 border-b-[0.5px] border-surface0 bg-crust pt-3 pb-2 text-[13px] font-normal text-overlay0 desk:static desk:pt-0">
               {year}
             </h2>
             <ul>
@@ -56,7 +56,7 @@ const label = posts.length === 1 ? t.blogIndex.one : t.blogIndex.many;
                   <li>
                     <a
                       href={postPath(lang, post.data.slug)}
-                      class="-mx-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 rounded-[5px] border-b-[0.5px] border-base px-3 py-[15px] transition-[background-color,transform] duration-[160ms] ease-[ease] hover:translate-x-1 hover:bg-base desk:grid-cols-[110px_1fr_auto] desk:items-baseline desk:gap-x-7 desk:gap-y-0"
+                      class="-mx-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 rounded-[5px] border-b-[0.5px] border-base px-3 py-[15px] transition-[background-color,transform] duration-[160ms] ease-[ease] hover:translate-x-1 hover:bg-base active:bg-base desk:grid-cols-[110px_1fr_auto] desk:items-baseline desk:gap-x-7 desk:gap-y-0"
                     >
                       <span class="order-1 text-[13px] text-overlay0 desk:order-none">
                         {isoDate(post.data.date)}

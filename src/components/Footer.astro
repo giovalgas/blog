@@ -16,7 +16,7 @@ const { links, class: className } = Astro.props;
     {
       links.map((link) => (
         <a
-          class="text-subtext0 transition-colors duration-[140ms] ease-[ease] hover:text-peach"
+          class="-my-1.5 py-1.5 text-subtext0 transition-colors duration-[140ms] ease-[ease] hover:text-peach active:text-peach"
           href={link.href}
           {...link.external ? { target: "_blank", rel: "noopener noreferrer" } : {}}
         >

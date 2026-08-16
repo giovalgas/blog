@@ -8,7 +8,8 @@ interface Props {
   windows: TmuxWindow[];
 }
 
-const ACTION = "cursor-pointer transition-colors duration-[140ms] ease-[ease] hover:text-peach";
+const ACTION =
+  "-my-2 cursor-pointer py-2 transition-colors duration-[140ms] ease-[ease] hover:text-peach active:text-peach";
 
 export default function CvPane({ files, labels, windows }: Props) {
   const [openFile, setOpenFile] = useState<string | null>(null);
@@ -45,11 +46,11 @@ export default function CvPane({ files, labels, windows }: Props) {
             key={doc.file}
             className="-mx-3 grid grid-cols-1 gap-y-1.5 rounded-[5px] border-t-[0.5px] border-base px-3 py-[15px] transition-colors duration-[160ms] ease-[ease] hover:bg-base desk:grid-cols-[230px_1fr_auto] desk:items-baseline desk:gap-x-6 desk:gap-y-0"
           >
-            <span className="text-text">{doc.file}</span>
+            <span className="break-all text-text">{doc.file}</span>
             <span className="text-[12px] text-overlay0 desk:text-[13px] desk:text-subtext0">
               {doc.description}
             </span>
-            <span className="flex items-baseline gap-3.5">
+            <span className="mt-1 flex items-baseline gap-3.5 desk:mt-0">
               <button
                 type="button"
                 className={`text-subtext0 ${ACTION}`}
@@ -80,14 +81,14 @@ export default function CvPane({ files, labels, windows }: Props) {
                 role="dialog"
                 aria-modal="true"
                 aria-label={`${labels.paneLabel}: ${openFile}`}
-                className="relative flex h-[92vh] animate-pane-up flex-col border-t border-peach bg-crust desk:h-[78vh]"
+                className="relative flex h-[92svh] animate-pane-up flex-col border-t border-peach bg-crust desk:h-[78vh]"
               >
-                <div className="flex flex-col gap-2 border-b-[0.5px] border-surface0 bg-base px-6 py-[14px] text-[13px] desk:flex-row desk:items-center desk:justify-between desk:gap-6">
-                  <span className="flex items-baseline gap-2.5">
+                <div className="flex items-center justify-between gap-4 border-b-[0.5px] border-surface0 bg-base px-4 py-[14px] text-[13px] desk:gap-6 desk:px-6">
+                  <span className="flex min-w-0 items-baseline gap-2.5">
                     <span className="text-peach">$</span>
-                    <span className="text-subtext0">less ~/documents/{openFile}</span>
+                    <span className="truncate text-subtext0">less ~/documents/{openFile}</span>
                   </span>
-                  <span className="flex items-center gap-[22px]">
+                  <span className="flex shrink-0 items-center gap-[22px]">
                     <a
                       className={`text-subtext0 ${ACTION}`}
                       href={`/documents/${openFile}`}
@@ -112,7 +113,7 @@ export default function CvPane({ files, labels, windows }: Props) {
                   className="min-h-0 w-full flex-1 border-0 bg-base"
                 />
 
-                <div className="flex items-center justify-between gap-6 bg-surface0 px-4 py-[7px] text-[12px] text-subtext0">
+                <div className="flex items-center justify-between gap-6 bg-surface0 pt-[7px] pb-[calc(7px+env(safe-area-inset-bottom))] pl-[max(16px,env(safe-area-inset-left))] pr-[max(16px,env(safe-area-inset-right))] text-[12px] text-subtext0">
                   <div className="flex items-center gap-3.5">
                     <span className="rounded-[3px] bg-peach px-[9px] py-px text-crust">
                       giovalgas
@@ -123,7 +124,9 @@ export default function CvPane({ files, labels, windows }: Props) {
                       </span>
                     ))}
                   </div>
-                  <span className="text-overlay0">{labels.closeHint}</span>
+                  <span className="hidden shrink-0 text-overlay0 desk:block">
+                    {labels.closeHint}
+                  </span>
                 </div>
               </div>
             </div>,

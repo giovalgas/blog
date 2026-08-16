@@ -12,7 +12,7 @@ const list = windows(lang, active);
 ---
 
 <div
-  class="fixed inset-x-0 bottom-0 z-30 flex items-center justify-between gap-6 bg-surface0 px-4 py-[7px] text-[12px] text-subtext0"
+  class="fixed inset-x-0 bottom-0 z-30 flex items-center justify-between gap-6 bg-surface0 pt-[7px] pb-[calc(7px+env(safe-area-inset-bottom))] pl-[max(16px,env(safe-area-inset-left))] pr-[max(16px,env(safe-area-inset-right))] text-[12px] text-subtext0"
 >
   <div class="flex items-center gap-3.5">
     <span class="rounded-[3px] bg-peach px-[9px] py-px text-crust">giovalgas</span>
@@ -24,7 +24,7 @@ const list = windows(lang, active);
           </span>
         ) : (
           <a
-            class="text-overlay0 transition-colors duration-[140ms] ease-[ease] hover:text-peach"
+            class="-my-2 py-2 text-overlay0 transition-colors duration-[140ms] ease-[ease] hover:text-peach active:text-peach"
             href={win.href}
           >
             {win.label}

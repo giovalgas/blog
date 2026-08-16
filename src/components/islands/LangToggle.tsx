@@ -21,7 +21,7 @@ export default function LangToggle({ lang, enHref, ptHref, label }: Props) {
       href={target}
       onClick={remember}
       aria-label={label}
-      className="fixed top-[28px] right-[32px] z-20 bg-transparent p-1.5 text-[12px]"
+      className="fixed top-[26px] right-4 z-20 bg-transparent p-2 text-[12px] desk:right-[30px]"
     >
       <span className={lang === "pt" ? "text-peach" : "text-overlay0"}>pt</span>
       <span className="text-surface1"> / </span>
