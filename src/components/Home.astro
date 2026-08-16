@@ -1,0 +1,91 @@
+---
+import CommandLink from "@/components/CommandLink.astro";
+import Footer from "@/components/Footer.astro";
+import Prompt from "@/components/Prompt.astro";
+import CvPane from "@/components/islands/CvPane";
+import ScrollCue from "@/components/islands/ScrollCue";
+import Typewriter from "@/components/islands/Typewriter";
+import { type Lang, ui, windows } from "@/i18n/ui";
+import Base from "@/layouts/Base.astro";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+const paragraph = "max-w-[66ch] text-[16px] leading-[1.75]";
+---
+
+<Base lang={lang} title={t.title} description={t.description} active="home" path="~">
+  <main>
+    <section class="shell flex min-h-svh flex-col justify-center pt-[88px] pb-12">
+      <Prompt command={t.hero.whoami} class="mb-[34px] animate-fade-up" />
+
+      <h1
+        class="animate-fade-up-slow text-[44px] leading-[1.02] font-medium tracking-[-0.045em] desk:text-[76px]"
+        style="animation-delay:.08s"
+      >
+        Giovani<br />Valgas
+      </h1>
+
+      <div class="mt-6 flex h-[30px] items-center text-[15px] text-subtext0 desk:text-[17px]">
+        <Typewriter client:visible roles={t.hero.roles} />
+      </div>
+
+      <nav
+        class="mt-[52px] mb-16 flex animate-fade-up-slow flex-col gap-[2px] text-[14px]"
+        style="animation-delay:.22s"
+      >
+        {
+          t.hero.links.map((link) => (
+            <CommandLink
+              command={link.command}
+              href={link.href}
+              hint={link.hint}
+              external={link.external}
+            />
+          ))
+        }
+      </nav>
+
+      <ScrollCue client:visible label={t.hero.scrollCue} href="#sobre" />
+    </section>
+
+    <section id="sobre" class="shell border-t-[0.5px] border-surface0 pt-[72px]">
+      <Prompt command={t.about.command} class="mb-[30px]" />
+
+      <p class={paragraph}>
+        {
+          t.about.p1.map((seg) =>
+            seg.accent ? <span class="text-peach">{seg.text}</span> : seg.text,
+          )
+        }
+      </p>
+
+      <p class:list={["mt-5", paragraph]}>
+        {
+          t.about.p2.map((seg) =>
+            seg.accent ? <span class="text-peach">{seg.text}</span> : seg.text,
+          )
+        }
+      </p>
+
+      <p class:list={["mt-[26px] flex gap-3", paragraph]}>
+        <span class="text-peach">&gt;</span><span>{t.about.tagline}</span>
+      </p>
+    </section>
+
+    <section class="shell pt-24">
+      <Prompt command={t.documents.command} class="mb-7" />
+      <CvPane
+        client:idle
+        files={t.documents.files}
+        labels={t.documents.labels}
+        windows={windows(lang, "home")}
+      />
+    </section>
+  </main>
+
+  <Footer links={t.footerHome} class="shell pt-[200px] pb-[104px]" />
+</Base>

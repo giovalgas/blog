@@ -56,6 +56,33 @@ com variedade cromática (Blue `#89b4fa`, Green, Peach, Mauve `#cba6f7`, Teal `#
 - Bordas: 0.5px `--surface0`; linhas de listagem 0.5px `--base`.
 - Raio: 5px em linhas/hover, 6px em cards e blocos de código.
 
+## Medidas confirmadas pelos comps
+
+Valores lidos de `Home.dc.html` / `Post.dc.html`. Onde este bloco e a prosa acima
+divergirem, este bloco vence.
+
+- **Base do documento**: `font-size: 14px`, `line-height: 1.7`, `-webkit-font-smoothing: antialiased`.
+- **Link padrão**: cor `--text`, `text-decoration: none`, hover `--peach`,
+  `transition: color .14s ease`. Link de nav e de rodapé nasce em `--subtext0`.
+- **Recuo negativo (obrigatório)**: todo alvo com fundo no hover recebe padding lateral e um
+  `margin` negativo do mesmo tamanho, para o texto continuar alinhado com a coluna e só o
+  fundo sangrar para fora:
+
+  | Alvo | Padding | Margin | Raio |
+  | --- | --- | --- | --- |
+  | linha de comando-link (hero, `cd ..`, cue) | `7px 12px` (cue e `cd ..`: `6px 12px`) | `margin-left: -12px` | 5px |
+  | linha de listagem (currículos, posts) | `15px 12px` | `0 -12px` | 5px |
+  | card anterior/próximo do post | `16px 14px` | `0 -14px` | 6px |
+
+- **Prompt `$`**: `align-items: baseline`; gap 10px entre `$` e comando em prompt solto
+  (`$ whoami`, `$ cat SOBRE.md`, `$ ls ~/documents`), gap 12px em linha clicável.
+  Prompt solto é 13px.
+- **Cursor**: bloco peach, `blink 1.1s step-end infinite` com
+  `@keyframes blink { 0%,49% { opacity: 1 } 50%,100% { opacity: 0 } }`.
+  Dois tamanhos: **9×19px** no hero (acompanha o cargo em 17px) e **8×16px** no rodapé.
+- **Alturas de linha**: hero `h1` 1.02; título de post 1.25; corpo 1.7; sobre 1.75;
+  bloco de código 1.65.
+
 ## Proibido
 
 Overlay de scanline CRT, glow/text-shadow neon, gradiente, box-shadow, animação de digitação

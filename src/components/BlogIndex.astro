@@ -1,0 +1,81 @@
+---
+import CommandLink from "@/components/CommandLink.astro";
+import Footer from "@/components/Footer.astro";
+import Prompt from "@/components/Prompt.astro";
+import { type Lang, isoDate, postPath, readingTime, ui } from "@/i18n/ui";
+import Base from "@/layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+
+const posts = (await getCollection("blog", (post) => post.data.lang === lang && !post.data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const years = [...new Set(posts.map((post) => post.data.date.getUTCFullYear()))];
+const label = posts.length === 1 ? t.blogIndex.one : t.blogIndex.many;
+---
+
+<Base
+  lang={lang}
+  title={`${t.blogIndex.title} · ${t.title}`}
+  description={t.blogIndex.description}
+  active="blog"
+  path="~/blog"
+  enHref={ui.en.blog}
+  ptHref={ui.pt.blog}
+>
+  <main class="shell pt-[88px] pb-[120px]">
+    <CommandLink command={t.blogIndex.backCommand} href={t.home} />
+
+    <div class="mt-14 flex items-baseline justify-between gap-6">
+      <Prompt command={t.blogIndex.listCommand} />
+      <span class="text-[12px] text-overlay0">{posts.length} {label}</span>
+    </div>
+
+    {
+      posts.length === 0 ? (
+        <div class="mt-9 text-[13px]">
+          <p class="text-overlay0">{t.blogIndex.emptyCommand}</p>
+          <p class="mt-2 text-subtext0">{t.blogIndex.emptyHint}</p>
+        </div>
+      ) : (
+        years.map((year) => (
+          <section class="mt-10">
+            <h2 class="sticky top-0 z-10 border-b-[0.5px] border-surface0 bg-crust pb-2 text-[13px] font-normal text-overlay0 desk:static">
+              {year}
+            </h2>
+            <ul>
+              {posts
+                .filter((post) => post.data.date.getUTCFullYear() === year)
+                .map((post) => (
+                  <li>
+                    <a
+                      href={postPath(lang, post.data.slug)}
+                      class="-mx-3 grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 rounded-[5px] border-b-[0.5px] border-base px-3 py-[15px] transition-[background-color,transform] duration-[160ms] ease-[ease] hover:translate-x-1 hover:bg-base desk:grid-cols-[110px_1fr_auto] desk:items-baseline desk:gap-x-7 desk:gap-y-0"
+                    >
+                      <span class="order-1 text-[13px] text-overlay0 desk:order-none">
+                        {isoDate(post.data.date)}
+                      </span>
+                      <span class="order-3 col-span-2 text-[15px] tracking-[-0.01em] text-text [text-wrap:pretty] desk:order-none desk:col-span-1">
+                        {post.data.title}
+                      </span>
+                      <span class="order-2 text-[12px] text-overlay0 desk:order-none">
+                        {readingTime(lang, post.data.readingMinutes)}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </section>
+        ))
+      )
+    }
+
+    <Footer links={t.footerBlog} class="mt-[72px] border-t-[0.5px] border-surface0 pt-7" />
+  </main>
+</Base>

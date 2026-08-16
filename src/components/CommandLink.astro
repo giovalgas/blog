@@ -1,0 +1,27 @@
+---
+interface Props {
+  command: string;
+  href: string;
+  hint?: string;
+  external?: boolean;
+  class?: string;
+}
+
+const { command, href, hint, external, class: className } = Astro.props;
+const target = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+---
+
+<a
+  href={href}
+  {...target}
+  class:list={[
+    "-mx-3 flex flex-col gap-1 rounded-[5px] px-3 transition-[background-color,transform] duration-[160ms] ease-[ease] hover:translate-x-1 hover:bg-base desk:mr-0 desk:w-fit desk:flex-row desk:items-baseline desk:gap-3",
+    hint ? "py-[7px]" : "py-1.5",
+    className,
+  ]}
+>
+  <span class="flex items-baseline gap-3">
+    <span class="text-peach">$</span><span class="text-subtext0">{command}</span>
+  </span>
+  {hint && <span class="text-[12px] text-overlay0 desk:text-[13px]">{hint}</span>}
+</a>

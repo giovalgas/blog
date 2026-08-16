@@ -1,0 +1,98 @@
+---
+import CommandLink from "@/components/CommandLink.astro";
+import Footer from "@/components/Footer.astro";
+import Prompt from "@/components/Prompt.astro";
+import { type Lang, isoDate, postPath, readingTime, ui } from "@/i18n/ui";
+import Base from "@/layouts/Base.astro";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+
+interface Props {
+  lang: Lang;
+  entry: CollectionEntry<"blog">;
+}
+
+const { lang, entry } = Astro.props;
+const t = ui[lang];
+const { Content } = await render(entry);
+
+const published = (
+  await getCollection("blog", (post) => post.data.lang === lang && !post.data.draft)
+).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const position = published.findIndex((post) => post.id === entry.id);
+const older = position >= 0 && position < published.length - 1 ? published[position + 1] : undefined;
+const newer = position > 0 ? published[position - 1] : undefined;
+
+const siblings = await getCollection(
+  "blog",
+  (post) => post.data.translationKey === entry.data.translationKey && !post.data.draft,
+);
+const enSibling = siblings.find((post) => post.data.lang === "en");
+const ptSibling = siblings.find((post) => post.data.lang === "pt");
+
+const file = `${entry.data.slug.toUpperCase()}.md`;
+const card =
+  "-mx-3.5 flex flex-col gap-2 rounded-[6px] px-3.5 py-4 transition-colors duration-[160ms] ease-[ease] hover:bg-base";
+---
+
+<Base
+  lang={lang}
+  title={`${entry.data.title} · ${t.title}`}
+  description={t.blogIndex.description}
+  active="blog"
+  path={`~/blog/${entry.data.slug}`}
+  enHref={enSibling ? postPath("en", enSibling.data.slug) : ui.en.blog}
+  ptHref={ptSibling ? postPath("pt", ptSibling.data.slug) : ui.pt.blog}
+>
+  <main class="shell pt-[88px] pb-[120px]">
+    <CommandLink command={t.post.backCommand} href={t.blog} />
+
+    <article class="mt-14 max-w-[68ch] animate-fade-up">
+      <Prompt command={`cat ${file}`} class="mb-[30px]" />
+
+      <h1
+        class="text-[26px] leading-[1.25] font-medium tracking-[-0.03em] [text-wrap:pretty] desk:text-[32px]"
+      >
+        {entry.data.title}
+      </h1>
+
+      <div class="mt-[18px] flex flex-wrap items-center gap-4 text-[13px] text-overlay0">
+        <span>{isoDate(entry.data.date)}</span>
+        <span>·</span>
+        <span>{readingTime(lang, entry.data.readingMinutes)}</span>
+        <span>·</span>
+        <span>{entry.data.tag}</span>
+      </div>
+
+      <div class="post-body"><Content /></div>
+    </article>
+
+    {
+      (older || newer) && (
+        <nav class="mt-[88px] grid max-w-[68ch] gap-6 border-t-[0.5px] border-surface0 pt-7 desk:grid-cols-2">
+          <div>
+            {older && (
+              <a href={postPath(lang, older.data.slug)} class={card}>
+                <span class="text-[12px] text-overlay0">← {t.post.prev}</span>
+                <span class="text-[14px] text-text [text-wrap:pretty]">{older.data.title}</span>
+              </a>
+            )}
+          </div>
+          <div class="desk:col-start-2">
+            {newer && (
+              <a href={postPath(lang, newer.data.slug)} class:list={[card, "desk:items-end desk:text-right"]}>
+                <span class="text-[12px] text-overlay0">{t.post.next} →</span>
+                <span class="text-[14px] text-text [text-wrap:pretty]">{newer.data.title}</span>
+              </a>
+            )}
+          </div>
+        </nav>
+      )
+    }
+
+    <Footer
+      links={t.footerBlog}
+      class="mt-[72px] max-w-[68ch] border-t-[0.5px] border-surface0 pt-7"
+    />
+  </main>
+</Base>

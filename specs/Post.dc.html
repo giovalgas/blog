@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"><style>
+html,body{margin:0;padding:0;background:#11111b;scroll-behavior:smooth;font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box}
+button,input{font-family:inherit}
+a{color:#cdd6f4;text-decoration:none}
+a:hover{color:#fab387}
+::selection{background:#45475a;color:#cdd6f4}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></helmet>
+<div style="min-height:100vh;background:#11111b;color:#cdd6f4;font-size:14px;line-height:1.7;-webkit-font-smoothing:antialiased">
+
+  <button onClick="{{ toggleLang }}" style="position:fixed;top:28px;right:32px;z-index:20;font-size:12px;color:#6c7086;background:transparent;border:0;padding:6px;cursor:pointer" style-hover="color:#fab387"><span style="color:{{ ptColor }}">pt</span><span style="color:#45475a"> / </span><span style="color:{{ enColor }}">en</span></button>
+
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:7px 16px;background:#313244;font-size:12px;color:#a6adc8">
+    <div style="display:flex;align-items:center;gap:14px">
+      <span style="background:#fab387;color:#11111b;padding:1px 9px;border-radius:3px">giovalgas</span>
+      <a href="Home.dc.html" style="color:#6c7086;transition:color .14s ease" style-hover="color:#fab387">0:home</a>
+      <span style="color:#cdd6f4">1:blog*</span>
+    </div>
+    <span style="color:#6c7086">~/blog/{{ t.slug }}</span>
+  </div>
+
+  <main style="max-width:1000px;margin:0 auto;padding:88px 56px 120px">
+
+    <a href="Blog.dc.html" style="display:inline-flex;align-items:baseline;gap:12px;font-size:13px;padding:6px 12px;margin-left:-12px;border-radius:5px;transition:background .16s ease,transform .16s ease" style-hover="background:#1e1e2e;transform:translateX(4px)">
+      <span style="color:#fab387">$</span><span style="color:#a6adc8">cd ..</span>
+    </a>
+
+    <article style="max-width:68ch;margin-top:56px;animation:fadeUp .5s ease both">
+      <div style="display:flex;align-items:baseline;gap:10px;font-size:13px;margin-bottom:30px"><span style="color:#fab387">$</span><span style="color:#a6adc8">cat {{ t.file }}</span></div>
+
+      <h1 style="margin:0;font-size:32px;font-weight:500;letter-spacing:-0.03em;line-height:1.25;color:#cdd6f4;text-wrap:pretty">{{ t.title }}</h1>
+      <div style="display:flex;align-items:center;gap:16px;margin-top:18px;font-size:13px;color:#6c7086">
+        <span>{{ date }}</span><span style="color:#6c7086">·</span><span>{{ t.read }}</span><span style="color:#6c7086">·</span><span>{{ t.tag }}</span>
+      </div>
+
+      <p style="margin:44px 0 0;font-size:16px;line-height:1.7;color:#cdd6f4">{{ t.p1 }}</p>
+
+      <h2 style="margin:52px 0 0;font-size:19px;font-weight:500;letter-spacing:-0.02em;color:#cdd6f4">{{ t.h1 }}</h2>
+      <p style="margin:18px 0 0;font-size:16px;line-height:1.7;color:#cdd6f4">{{ t.p2 }}</p>
+
+      <div style="margin:32px 0 0;border:0.5px solid #313244;border-radius:6px;overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px 16px;background:#1e1e2e;border-bottom:0.5px solid #313244;font-size:12px;color:#6c7086">
+          <span>otel-collector.yaml</span><span>yaml</span>
+        </div>
+        <div style="padding:20px;background:#1e1e2e;font-size:13px;line-height:1.65;overflow-x:auto">
+          <div style="padding-left:0.0px"><span style="color:#89b4fa">exporters</span>:</div>
+          <div style="padding-left:16.4px"><span style="color:#89b4fa">otlp/tempo</span>:</div>
+          <div style="padding-left:32.8px"><span style="color:#89b4fa">endpoint</span>: <span style="color:#a6e3a1">tempo:4317</span></div>
+          <div style="padding-left:32.8px"><span style="color:#89b4fa">tls</span>:</div>
+          <div style="padding-left:49.2px"><span style="color:#89b4fa">insecure</span>: <span style="color:#fab387">true</span></div>
+          <div style="height:1.65em"></div>
+          <div style="padding-left:0.0px"><span style="color:#89b4fa">processors</span>:</div>
+          <div style="padding-left:16.4px"><span style="color:#89b4fa">tail_sampling</span>:</div>
+          <div style="padding-left:32.8px"><span style="color:#89b4fa">decision_wait</span>: <span style="color:#fab387">10s</span></div>
+          <div style="padding-left:32.8px"><span style="color:#89b4fa">policies</span>:</div>
+          <div style="padding-left:49.2px">- <span style="color:#89b4fa">name</span>: <span style="color:#a6e3a1">errors</span></div>
+          <div style="padding-left:65.6px"><span style="color:#89b4fa">type</span>: <span style="color:#a6e3a1">status_code</span></div>
+          <div style="padding-left:65.6px"><span style="color:#89b4fa">status_code</span>: {<span style="color:#89b4fa">status_codes</span>: [<span style="color:#a6e3a1">ERROR</span>]}</div>
+        </div>
+      </div>
+
+      <p style="margin:32px 0 0;font-size:16px;line-height:1.7;color:#cdd6f4">{{ t.p3a }}<code style="background:#313244;border-radius:3px;padding:2px 6px;font-size:14px">tail_sampling</code>{{ t.p3b }}</p>
+
+      <h2 style="margin:52px 0 0;font-size:19px;font-weight:500;letter-spacing:-0.02em;color:#cdd6f4">{{ t.h2 }}</h2>
+      <p style="margin:18px 0 0;font-size:16px;line-height:1.7;color:#cdd6f4">{{ t.p4 }}</p>
+
+      <blockquote style="margin:32px 0 0;padding:0 0 0 20px;border-left:1px solid #45475a;font-size:16px;line-height:1.7;color:#a6adc8">{{ t.quote }}</blockquote>
+    </article>
+
+    <nav style="max-width:68ch;margin-top:88px;padding-top:28px;border-top:0.5px solid #313244;display:grid;grid-template-columns:1fr 1fr;gap:24px">
+      <a href="#" style="display:flex;flex-direction:column;gap:8px;padding:16px 14px;margin:0 -14px;border-radius:6px;transition:background .16s ease" style-hover="background:#1e1e2e">
+        <span style="font-size:12px;color:#6c7086">← {{ t.prev }}</span>
+        <span style="font-size:14px;color:#cdd6f4;text-wrap:pretty">{{ t.prevTitle }}</span>
+      </a>
+      <a href="#" style="display:flex;flex-direction:column;gap:8px;align-items:flex-end;text-align:right;padding:16px 14px;margin:0 -14px;border-radius:6px;transition:background .16s ease" style-hover="background:#1e1e2e">
+        <span style="font-size:12px;color:#6c7086">{{ t.next }} →</span>
+        <span style="font-size:14px;color:#cdd6f4;text-wrap:pretty">{{ t.nextTitle }}</span>
+      </a>
+    </nav>
+
+    <footer style="max-width:68ch;margin-top:72px;padding-top:28px;border-top:0.5px solid #313244;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13px">
+      <nav style="display:flex;align-items:center;gap:26px">
+        <a href="https://github.com/giovalgas" style="color:#a6adc8;transition:color .14s ease" style-hover="color:#fab387">github</a>
+        <a href="https://www.linkedin.com/in/giovalgas/" style="color:#a6adc8;transition:color .14s ease" style-hover="color:#fab387">linkedin</a>
+        <a href="mailto:contato@giovalgas.dev.br" style="color:#a6adc8;transition:color .14s ease" style-hover="color:#fab387">email</a>
+        <a href="#" style="color:#a6adc8;transition:color .14s ease" style-hover="color:#fab387">rss</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:8px;color:#6c7086">
+        <span style="color:#fab387">$</span>
+        <span style="display:inline-block;width:8px;height:16px;background:#fab387;animation:blink 1.1s step-end infinite"></span>
+      </div>
+    </footer>
+  </main>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const COPY = {
+  pt: {
+    langLabel: "pt / en", prev: "anterior", next: "próximo",
+    slug: "observabilidade-lgtm", file: "OBSERVABILIDADE-LGTM.md",
+    title: "Migrando observabilidade de New Relic para a stack LGTM",
+    read: "12 min", tag: "infra",
+    p1: "Rodávamos observabilidade em SaaS fechado por três anos. A conta crescia junto com o volume de spans, e o time consultava dashboards que ninguém sabia editar. A decisão foi migrar para a stack LGTM — Loki, Grafana, Tempo e Mimir — com instrumentação em OpenTelemetry.",
+    h1: "O que sai do agente proprietário",
+    p2: "O agente antigo fazia três coisas ao mesmo tempo: coleta, enriquecimento e envio. Separar isso em collector e exportadores deixou claro quanto do custo vinha de span que ninguém lia.",
+    p3a: "Com ", p3b: " guardando erro e latência alta, o volume caiu sem perder o que se olha em incidente.",
+    h2: "O que eu faria diferente",
+    p4: "Instrumentar antes de migrar. Passamos duas semanas comparando gráficos entre as duas ferramentas porque os nomes de métrica não batiam. Padronizar convenção semântica primeiro teria evitado isso.",
+    quote: "Se a métrica não tem dono, ela não vira alerta — vira gráfico bonito no telão.",
+    prevTitle: "Blue-green com Traefik e Docker Swarm sem downtime",
+    nextTitle: "Escrevendo um TUI em Go com Bubbletea"
+  },
+  en: {
+    langLabel: "en / pt", prev: "previous", next: "next",
+    slug: "observability-lgtm", file: "OBSERVABILITY-LGTM.md",
+    title: "Migrating observability from New Relic to the LGTM stack",
+    read: "12 min read", tag: "infra",
+    p1: "We ran observability on a closed SaaS for three years. The bill grew with span volume, and the team relied on dashboards nobody knew how to edit. We decided to move to the LGTM stack — Loki, Grafana, Tempo and Mimir — instrumented with OpenTelemetry.",
+    h1: "What the proprietary agent takes with it",
+    p2: "The old agent did three things at once: collection, enrichment and shipping. Splitting that into a collector and exporters made it clear how much of the cost came from spans nobody read.",
+    p3a: "With ", p3b: " keeping errors and high latency, volume dropped without losing what you actually look at during an incident.",
+    h2: "What I would do differently",
+    p4: "Instrument before migrating. We spent two weeks comparing charts between both tools because metric names did not match. Standardizing semantic conventions first would have avoided that.",
+    quote: "A metric with no owner never becomes an alert — it becomes a nice chart on the wall screen.",
+    prevTitle: "Blue-green with Traefik and Docker Swarm, no downtime",
+    nextTitle: "Writing a TUI in Go with Bubbletea"
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: "pt" };
+  renderVals() {
+    return {
+      t: COPY[this.state.lang],
+      ptColor: this.state.lang === "pt" ? "#fab387" : "#6c7086",
+      enColor: this.state.lang === "en" ? "#fab387" : "#6c7086",
+      date: "2026-07-28",
+      toggleLang: () => this.setState(s => ({ lang: s.lang === "pt" ? "en" : "pt" }))
+    };
+  }
+}
+</script>
+</body>
+</html>

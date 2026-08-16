@@ -1,0 +1,12 @@
+---
+interface Props {
+  command: string;
+  class?: string;
+}
+
+const { command, class: className } = Astro.props;
+---
+
+<div class:list={["flex items-baseline gap-2.5 text-[13px]", className]}>
+  <span class="text-peach">$</span><span class="text-subtext0">{command}</span>
+</div>

@@ -28,12 +28,18 @@ Mantenha esses textos **verbatim**. Não reescreva, não expanda.
 
 ## Links
 
-- github.com/giovalgas
-- linkedin.com/in/giovalgas
-- instagram.com/giosvalgas (só no rodapé)
-- youtube.com/@giovalgasdev (só no rodapé)
-- contato@giovalgas.dev.br
-- RSS: /rss.xml
+O `href` sai da coluna da direita (valores de `Home.dc.html`); o texto visível na tela é o da
+coluna do meio.
+
+| Rede | Texto na tela | href |
+| --- | --- | --- |
+| github | `github.com/giovalgas` | `https://github.com/giovalgas` |
+| linkedin | `linkedin.com/in/giovalgas` | `https://www.linkedin.com/in/giovalgas/` |
+| instagram | `instagram` (só no rodapé) | `https://www.instagram.com/giosvalgas/` |
+| youtube | `youtube` (só no rodapé) | `https://www.youtube.com/@giovalgasdev` |
+| email | `contato@giovalgas.dev.br` | `mailto:contato@giovalgas.dev.br` |
+
+RSS: `/rss.xml` (en, padrão) e `/pt/rss.xml`.
 
 ## Documentos
 
@@ -41,6 +47,8 @@ Mantenha esses textos **verbatim**. Não reescreva, não expanda.
 - `public/documents/resume-en.pdf`
 
 ## Posts de referência (para semear o conteúdo)
+
+Inglês é o idioma padrão (`08-I18N.md`), então a coluna `en` é a que manda na rota sem prefixo.
 
 | Data | pt | en | Leitura |
 | --- | --- | --- | --- |
@@ -50,3 +58,8 @@ Mantenha esses textos **verbatim**. Não reescreva, não expanda.
 | 2025-11-19 | Escrevendo um TUI em Go com Bubbletea | Writing a TUI in Go with Bubbletea | 10 min |
 
 Se ainda não houver post publicado, a listagem mostra o estado vazio descrito em `05-BLOG.md`.
+
+O corpo do post de 2026-07-28 já está escrito nos dois idiomas dentro de `Post.dc.html`
+(objeto `COPY`, chaves `p1`, `h1`, `p2`, `p3a`/`p3b`, `h2`, `p4`, `quote`, mais o bloco
+`otel-collector.yaml`). Use aquele texto **verbatim** ao semear o Markdown; slug
+`observabilidade-lgtm` / `observability-lgtm`, tag `infra`.

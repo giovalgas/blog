@@ -1,0 +1,32 @@
+---
+import type { NavLink } from "@/i18n/ui";
+
+interface Props {
+  links: NavLink[];
+  class?: string;
+}
+
+const { links, class: className } = Astro.props;
+---
+
+<footer
+  class:list={["flex flex-wrap items-center justify-between gap-6 text-[13px]", className]}
+>
+  <nav class="flex flex-wrap items-center gap-x-[26px] gap-y-3">
+    {
+      links.map((link) => (
+        <a
+          class="text-subtext0 transition-colors duration-[140ms] ease-[ease] hover:text-peach"
+          href={link.href}
+          {...link.external ? { target: "_blank", rel: "noopener noreferrer" } : {}}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+  <div class="flex items-center gap-2" aria-hidden="true">
+    <span class="text-peach">$</span>
+    <span class="term-cursor"></span>
+  </div>
+</footer>

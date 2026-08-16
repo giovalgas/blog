@@ -3,6 +3,16 @@
 Quero construir meu site pessoal (portfólio + blog) do zero, em Astro + TypeScript,
 seguindo as specs deste repositório. Leia todos os arquivos de `specs/` antes de escrever código.
 
+## Comps de referência (fonte de verdade visual)
+
+`specs/Home.dc.html` e `specs/Post.dc.html` são comps navegáveis com todos os estilos inline.
+**Onde o comp e o texto de uma spec divergirem, o comp vence.** Os valores em `.md` são a
+intenção; os do comp são a medida. Não existe comp do índice do blog: derive dele os padrões
+de `Post.dc.html` (container, rodapé, linhas com hover).
+
+Os comps usam Google Fonts, `<x-dc>` e um runtime próprio (`support.js`). Nada disso vai para
+o site: são só referência. Não copie a marcação, copie as medidas.
+
 Ordem de trabalho:
 
 1. `specs/01-STACK.md` — decisões técnicas e estrutura de pastas.
@@ -14,6 +24,9 @@ Ordem de trabalho:
 7. `specs/07-CV-PANE.md`
 8. `specs/08-I18N.md`
 9. `specs/09-CONTEUDO.md` — textos reais, links, dados.
+
+Ao trabalhar a home, abra `Home.dc.html` junto de `04-HOME.md`; ao trabalhar o post,
+`Post.dc.html` junto de `06-POST.md`.
 
 Regras gerais:
 
