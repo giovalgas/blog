@@ -101,7 +101,5 @@ Bloco de código com cabeçalho sai de um transformer de Shiki (`codeFrame` em
 
 ## Pendências
 
-- `public/documents/curriculo-pt.pdf` e `public/documents/resume-en.pdf` são **placeholders**
-  gerados só para o pane ter o que exibir. Substitua pelos PDFs reais.
 - Só o post de 2026-07-28 está semeado (o texto existe verbatim em `specs/Post.dc.html`).
   Os outros três de `specs/09-CONTEUDO.md` estão sem corpo escrito.

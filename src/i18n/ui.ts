@@ -151,8 +151,11 @@ export const ui: Record<Lang, Ui> = {
     documents: {
       command: "ls ~/documents",
       files: [
-        { file: "resume-en.pdf", description: "resume in english" },
-        { file: "curriculo-pt.pdf", description: "resume in portuguese" },
+        { file: "giovani-valgas-cv-en.pdf", description: "resume in english" },
+        {
+          file: "giovani-valgas-cv-ptbr.pdf",
+          description: "resume in portuguese",
+        },
       ],
       labels: {
         open: "open",
@@ -253,8 +256,11 @@ export const ui: Record<Lang, Ui> = {
     documents: {
       command: "ls ~/documents",
       files: [
-        { file: "curriculo-pt.pdf", description: "currículo em português" },
-        { file: "resume-en.pdf", description: "resumo em inglês" },
+        {
+          file: "giovani-valgas-cv-ptbr.pdf",
+          description: "currículo em português",
+        },
+        { file: "giovani-valgas-cv-en.pdf", description: "resumo em inglês" },
       ],
       labels: {
         open: "abrir",
